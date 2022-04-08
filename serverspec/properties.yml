@@ -1,0 +1,5 @@
+twitter-demo.learning-fujimoto.com:
+  :roles:
+    - app
+    - db
+  :server_id: 101
