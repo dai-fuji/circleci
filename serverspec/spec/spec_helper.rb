@@ -26,6 +26,14 @@ options = Net::SSH::Config.for(host)
 
 options[:user] ||= Etc.getlogin
 
+# add ssh options
+unless properties[host][:ssh_opts].nil?
+  options.merge!(properties[host][:ssh_opts])
+end
+
+# add pty option
+set :request_pty, true
+
 set :host,        options[:host_name] || host
 set :ssh_options, options
 
