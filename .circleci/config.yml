@@ -10,6 +10,18 @@ jobs:
           fingerprints:
           - "d4:08:7c:96:21:50:68:30:84:b5:c4:e0:9f:57:12:f2"
       - run: ruby --version
+      - run: 
+          name: install serverspec
+          command:  |
+            gem install serverspec;
+            gem install yaml;
+            gem install rake;
+            gem install highline;
+      - run:
+          name: execute test
+          command:  |
+            cd serverspec;
+            rake spec;
 
 workflows:
   say-hello-workflow:
