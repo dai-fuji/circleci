@@ -4,8 +4,8 @@ describe package('httpd'), :if => os[:family] == 'redhat' do
   it { should be_installed }
 end
 
-describe package('apache2'), :if => os[:family] == 'ubuntu' do
-  it { should be_installed }
+describe package('nginx'), :if => os[:family] == 'amazon' do
+ it { should be_installed }
 end
 
 describe service('httpd'), :if => os[:family] == 'redhat' do
@@ -25,4 +25,14 @@ end
 
 describe port(80) do
   it { should be_listening }
+end
+
+describe port(22) do
+  it { should be_listening }
+end
+
+
+
+describe package('nodejs')do
+  it { should be_installed }
 end
