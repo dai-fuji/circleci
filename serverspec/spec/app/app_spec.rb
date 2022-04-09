@@ -4,14 +4,12 @@ describe package('nginx'), :if => os[:family] == 'amazon' do
   it { should be_installed }
 end
 
-describe service('nginx') do
+describe process("nginx") do
   it { should be_running }
-  it { should be_enabled }
 end
 
-describe service('unicorn') do
+describe process("unicorn") do
   it { should be_running }
-  it { should be_enabled }
 end
 
 describe file('/etc/nginx/conf.d/sample.conf') do
