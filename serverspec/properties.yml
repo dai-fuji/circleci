@@ -1,6 +1,7 @@
  35.78.55.11:
   :roles:
     - app
+    - base
     - db
   :ssh_opts:
     :user: ec2-user

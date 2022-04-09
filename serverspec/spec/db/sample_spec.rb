@@ -31,8 +31,3 @@ describe port(22) do
   it { should be_listening }
 end
 
-
-
-describe package('nodejs')do
-  it { should be_installed }
-end
