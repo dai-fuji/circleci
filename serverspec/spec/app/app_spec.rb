@@ -8,8 +8,8 @@ describe process("nginx") do
   it { should be_running }
 end
 
-describe process("unicorn") do
-  it { should be_running }
+describe file('/home/ec2-user/rails-app/rails_app/tmp/sockets/unicorn.sock') do
+  it { should be_socket }
 end
 
 describe file('/etc/nginx/conf.d/sample.conf') do
