@@ -22,6 +22,13 @@ describe port(22) do
   it { should be_listening }
 end
 
-describe package('git') do
+packages = ["git","make","gcc-c++","patch","libyaml-devel","libffi-devel","libicu-devel","zlib-devel","readline-devel","libxml2-devel","ImageMagick","ImageMagick-devel","libxslt-devel","openssl-devel","libcurl","libcurl-devel","curl"]
+packages.each do |pkgs|
+  describe package(pkgs) do
+    it { should be_installed }
+  end
+end
+
+describe package('nginx'), :if => os[:family] == 'amazon' do
   it { should be_installed }
 end
