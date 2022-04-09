@@ -13,3 +13,11 @@ describe file('/home/ec2-user/rails-app/rails_app') do
   it { should be_owned_by 'ec2-user' }
   it { should be_grouped_into 'ec2-user' }
 end
+
+describe port(80) do
+  it { should be_listening }
+end
+
+describe port(22) do
+  it { should be_listening }
+end
