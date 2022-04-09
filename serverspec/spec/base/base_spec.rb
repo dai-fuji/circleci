@@ -21,3 +21,7 @@ end
 describe port(22) do
   it { should be_listening }
 end
+
+describe package('git') do
+  it { should be_installed }
+end
