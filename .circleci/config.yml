@@ -11,9 +11,9 @@ jobs:
           command: "echo Hello, World!"
       - run:
           name: Register env
-          command: "NAME=fujimoto"
+          command: export NAME=Taro >> $BASH_ENV
           environment:
-            NAME: $NAME
+            NAME_ENV: $NAME
 
   say-goodbye:
     docker:
@@ -25,7 +25,7 @@ jobs:
           command: "echo Good Bye"
       - run:
           name: echo env
-          command: echo ${NAME}
+          command: echo ${NAME_ENV}
 
 
 
