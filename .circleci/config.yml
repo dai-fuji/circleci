@@ -38,6 +38,9 @@ jobs:
       - run:
           name: echo env
           command: echo "${NAME_ENV}"
+      - run:
+          name: "What was my custom environment variable?"
+          command: echo ${MY_ENV_VAR}
 
 
 
