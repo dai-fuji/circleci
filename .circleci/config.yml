@@ -16,6 +16,9 @@ jobs:
             source $BASH_ENV;
           environment:
             NAME_ENV: $NAME
+      - run:
+          name: temp echo
+          command: echo ${NAME_ENV}
 
   say-goodbye:
     docker:
