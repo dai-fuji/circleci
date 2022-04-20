@@ -7,18 +7,25 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "Say hello"
-          command: "echo Hello, World!"
+          name: "Setup custom environment variables"
+          command: echo 'export MY_ENV_VAR="FOO"' >> $BASH_ENV
+      - run: # 現在のブランチ名を print
+          name: "What branch am I on?"
+          command: echo ${CIRCLE_BRANCH}
+      # 上記のステップと同じことをするステップを実行
+      # 環境変数を参照する際には波括弧をつけなくても大丈夫です
       - run:
-          name: Register env
-          command: |
-            export NAME=Taro >> $BASH_ENV;
-            source $BASH_ENV;
-          environment:
-            NAME_ENV: $NAME
+          name: "What branch am I on now?"
+          command: echo $CIRCLE_BRANCH
       - run:
-          name: temp echo
-          command: echo ${NAME_ENV}
+          name: "What was my custom environment variable?"
+          command: echo ${MY_ENV_VAR}
+      - run:
+          name: "Print an env var stored in the Project"
+          command: echo ${PROJECT_ENV_VAR}
+      - run:
+          name: "Print an env var stored in a Context"
+          command: echo ${CONTEXT_ENV_VAR}
 
   say-goodbye:
     docker:
