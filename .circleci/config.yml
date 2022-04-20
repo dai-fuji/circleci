@@ -11,7 +11,9 @@ jobs:
           command: "echo Hello, World!"
       - run:
           name: Register env
-          command: export NAME=Taro >> $BASH_ENV
+          command: |
+            export NAME=Taro >> $BASH_ENV;
+            source $BASH_ENV;
           environment:
             NAME_ENV: $NAME
 
