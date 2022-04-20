@@ -9,6 +9,11 @@ jobs:
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
+      - run:
+          name: Register env
+          command: "NAME=fujimoto"
+          environment:
+            NAME: $NAME
 
   say-goodbye:
     docker:
@@ -18,6 +23,11 @@ jobs:
       - run:
           name: "Say goodbye"
           command: "echo Good Bye"
+      - run:
+          name: echo env
+          command: echo ${NAME}
+
+
 
 workflows:
   say-hello-workflow:
