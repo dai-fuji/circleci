@@ -27,7 +27,7 @@ jobs:
           command: "echo Good Bye"
       - run:
           name: echo env
-          command: echo ${NAME_ENV}
+          command: echo "${NAME_ENV}"
 
 
 
