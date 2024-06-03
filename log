@@ -1,0 +1,67 @@
+[Container] 2024/06/03 08:37:10.917082 Running on CodeBuild On-demand
+[Container] 2024/06/03 08:37:10.917095 Waiting for agent ping
+[Container] 2024/06/03 08:37:11.118611 Waiting for DOWNLOAD_SOURCE
+[Container] 2024/06/03 08:37:15.007117 Phase is DOWNLOAD_SOURCE
+[Container] 2024/06/03 08:37:15.009036 CODEBUILD_SRC_DIR=/codebuild/output/src2388763306/src/codestar-connections.us-east-1.amazonaws.com/git-http/571705099822/us-east-1/a78ba404-3204-4f4e-a906-746cfbf6011a/dai-fuji/docker-python-library-for-lambda
+[Container] 2024/06/03 08:37:15.009543 YAML location is /codebuild/output/src2388763306/src/codestar-connections.us-east-1.amazonaws.com/git-http/571705099822/us-east-1/a78ba404-3204-4f4e-a906-746cfbf6011a/dai-fuji/docker-python-library-for-lambda/buildspec.yml
+[Container] 2024/06/03 08:37:15.011158 Setting HTTP client timeout to higher timeout for S3 source
+[Container] 2024/06/03 08:37:15.011264 Processing environment variables
+[Container] 2024/06/03 08:37:15.220473 No runtime version selected in buildspec.
+[Container] 2024/06/03 08:37:15.263721 Git credential helper enabled
+GITHUB Git credential unavailable.
+BITBUCKET Git credential unavailable.
+GITHUB_ENTERPRISE Git credential unavailable.
+GITLAB Git credential unavailable.
+GITLAB_SELF_MANAGED Git credential unavailable.
+[Container] 2024/06/03 08:37:15.277021 Moving to directory /codebuild/output/src2388763306/src/codestar-connections.us-east-1.amazonaws.com/git-http/571705099822/us-east-1/a78ba404-3204-4f4e-a906-746cfbf6011a/dai-fuji/docker-python-library-for-lambda
+[Container] 2024/06/03 08:37:15.280158 Unable to initialize cache download: no paths specified to be cached
+[Container] 2024/06/03 08:37:15.316425 Configuring ssm agent with target id: codebuild:e2f24d93-5e55-4b07-988b-8d4a04ac301b
+[Container] 2024/06/03 08:37:15.353431 Successfully updated ssm agent configuration
+[Container] 2024/06/03 08:37:15.353821 Registering with agent
+[Container] 2024/06/03 08:37:15.387803 Phases found in YAML: 1
+[Container] 2024/06/03 08:37:15.387829 PRE_BUILD: 2 commands
+[Container] 2024/06/03 08:37:15.388150 Phase complete: DOWNLOAD_SOURCE State: SUCCEEDED
+[Container] 2024/06/03 08:37:15.388162 Phase context status code: Message:
+[Container] 2024/06/03 08:37:15.447645 Entering phase INSTALL
+[Container] 2024/06/03 08:37:15.482269 Phase complete: INSTALL State: SUCCEEDED
+[Container] 2024/06/03 08:37:15.482294 Phase context status code: Message:
+[Container] 2024/06/03 08:37:15.512925 Entering phase PRE_BUILD
+[Container] 2024/06/03 08:37:15.513384 Running command git submodule update --init --recursive
+Submodule 'circleci' (https://github.com/dai-fuji/circleci.git) registered for path 'circleci'
+Cloning into '/codebuild/output/src2388763306/src/codestar-connections.us-east-1.amazonaws.com/git-http/571705099822/us-east-1/a78ba404-3204-4f4e-a906-746cfbf6011a/dai-fuji/docker-python-library-for-lambda/circleci'...
+Submodule path 'circleci': checked out 'b3acbf7af1217e51a2fed06f82c3bcde7017af36'
+[Container] 2024/06/03 08:37:15.858684 Running command ls -R
+.:
+Dockerfile
+README.md
+buildspec.yml
+circleci
+docker-compose.yml
+opt
+./circleci:
+test.md
+test10
+test2.md
+test2.txt
+vi
+./opt:
+temp.txt
+[Container] 2024/06/03 08:37:15.866356 Phase complete: PRE_BUILD State: SUCCEEDED
+[Container] 2024/06/03 08:37:15.866381 Phase context status code: Message:
+[Container] 2024/06/03 08:37:15.893885 Entering phase BUILD
+[Container] 2024/06/03 08:37:15.895440 Phase complete: BUILD State: SUCCEEDED
+[Container] 2024/06/03 08:37:15.895453 Phase context status code: Message:
+[Container] 2024/06/03 08:37:15.922011 Entering phase POST_BUILD
+[Container] 2024/06/03 08:37:15.924366 Phase complete: POST_BUILD State: SUCCEEDED
+[Container] 2024/06/03 08:37:15.924384 Phase context status code: Message:
+[Container] 2024/06/03 08:37:15.974388 Set report auto-discover timeout to 5 seconds
+[Container] 2024/06/03 08:37:15.974426 Expanding base directory path: .
+[Container] 2024/06/03 08:37:15.978807 Assembling file list
+[Container] 2024/06/03 08:37:15.978830 Expanding .
+[Container] 2024/06/03 08:37:15.984707 Expanding file paths for base directory .
+[Container] 2024/06/03 08:37:15.984728 Assembling file list
+[Container] 2024/06/03 08:37:15.984733 Expanding \*_/_
+[Container] 2024/06/03 08:37:15.990022 No matching auto-discover report paths found
+[Container] 2024/06/03 08:37:15.990045 Report auto-discover file discovery took 0.015658 seconds
+[Container] 2024/06/03 08:37:15.990060 Phase complete: UPLOAD_ARTIFACTS State: SUCCEEDED
+[Container] 2024/06/03 08:37:15.990082 Phase context status code: Message:
