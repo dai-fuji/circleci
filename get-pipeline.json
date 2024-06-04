@@ -1,0 +1,97 @@
+{
+    "pipeline": {
+        "name": "TEST",
+        "roleArn": "arn:aws:iam::571705099822:role/service-role/TEST",
+        "artifactStore": {
+            "type": "S3",
+            "location": "codepipeline-us-east-1-309328520283"
+        },
+        "stages": [
+            {
+                "name": "Source",
+                "actions": [
+                    {
+                        "name": "Source",
+                        "actionTypeId": {
+                            "category": "Source",
+                            "owner": "AWS",
+                            "provider": "CodeStarSourceConnection",
+                            "version": "1"
+                        },
+                        "runOrder": 1,
+                        "configuration": {
+                            "BranchName": "test",
+                            "ConnectionArn": "arn:aws:codestar-connections:us-east-1:571705099822:connection/a78ba404-3204-4f4e-a906-746cfbf6011a",
+                            "DetectChanges": "false",
+                            "FullRepositoryId": "dai-fuji/docker-python-library-for-lambda",
+                            "OutputArtifactFormat": "CODEBUILD_CLONE_REF"
+                        },
+                        "outputArtifacts": [
+                            {
+                                "name": "SourceArtifact"
+                            }
+                        ],
+                        "inputArtifacts": [],
+                        "region": "us-east-1",
+                        "namespace": "SourceVariables"
+                    }
+                ]
+            },
+            {
+                "name": "Build",
+                "actions": [
+                    {
+                        "name": "Build",
+                        "actionTypeId": {
+                            "category": "Build",
+                            "owner": "AWS",
+                            "provider": "CodeBuild",
+                            "version": "1"
+                        },
+                        "runOrder": 1,
+                        "configuration": {
+                            "ProjectName": "test"
+                        },
+                        "outputArtifacts": [
+                            {
+                                "name": "BuildArtifact"
+                            }
+                        ],
+                        "inputArtifacts": [
+                            {
+                                "name": "SourceArtifact"
+                            }
+                        ],
+                        "region": "us-east-1",
+                        "namespace": "BuildVariables"
+                    }
+                ]
+            }
+        ],
+        "version": 3,
+        "executionMode": "QUEUED",
+        "pipelineType": "V2",
+        "triggers": [
+            {
+                "providerType": "CodeStarSourceConnection",
+                "gitConfiguration": {
+                    "sourceActionName": "Source",
+                    "push": [
+                        {
+                            "branches": {
+                                "includes": [
+                                    "test"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "metadata": {
+        "pipelineArn": "arn:aws:codepipeline:us-east-1:571705099822:TEST",
+        "created": "2024-05-13T15:35:43.586000+00:00",
+        "updated": "2024-05-13T16:44:05.519000+00:00"
+    }
+}
